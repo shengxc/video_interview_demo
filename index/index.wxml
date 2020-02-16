@@ -1,0 +1,16 @@
+<view class="page-body">
+  <view class="page-body-wrapper">
+    <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;">
+      <cover-view wx:if="{{interviewing==false}}" class="cover-view"></cover-view>
+      <cover-view wx:if="{{interviewing==true}}">
+        <cover-view class="emotion">{{emotion}}</cover-view>
+        <cover-view class="error-tips">{{error_tips}}</cover-view>
+        <cover-view class="caption">{{caption}}</cover-view>
+      </cover-view>
+    </camera>
+    <view class="btn-area">
+      <button type="primary" bindtap="toggle" wx:if="{{interviewing==false}}">开始面试</button>
+      <button type="primary" bindtap="toggle" wx:if="{{interviewing==true}}">结束面试</button>
+    </view>
+  </view>
+</view>
